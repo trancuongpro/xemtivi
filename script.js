@@ -4,6 +4,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const htvBtn = document.getElementById("htv-btn");
     const vtvBtn = document.getElementById("vtv-btn");
     const thvlBtn = document.getElementById("thvl-btn");
+	const phimBtn = document.getElementById("phim-btn");
+	const fmBtn = document.getElementById("fm-btn");
 
     // Sự kiện khi nhấn nút "Tải lại"
     reloadBtn.addEventListener("click", () => {
@@ -27,6 +29,16 @@ document.addEventListener("DOMContentLoaded", () => {
     // Sự kiện khi nhấn nút "THVL"
     thvlBtn.addEventListener("click", () => {
         window.location.href = "indexvl.html"; // Dẫn đến trang thvl.html
+    });
+	
+	// Sự kiện khi nhấn nút "Xem Phim"
+    phimBtn.addEventListener("click", () => {
+        window.location.href = "indexphim.html"; // Dẫn đến trang phim.html
+    });
+	
+	// Sự kiện khi nhấn nút "Radio"
+    fmBtn.addEventListener("click", () => {
+        window.location.href = "indexfm.html"; // Dẫn đến trang radio.html
     });
 
     // Kiểm tra khi iframe tải xong
