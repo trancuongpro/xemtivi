@@ -41,10 +41,10 @@ header h1 {
 
 .button-group {
     display: flex;
-    gap: 30px; /* Khoảng cách giữa các button */
+    gap: 40px; /* Khoảng cách giữa các button */
 }
 
-#htv-btn, #vtv-btn, #thvl-btn {
+#htv-btn, #vtv-btn, #thvl-btn , #phim-btn , #fm-btn {
     padding: 8px 16px;
     font-size: 20px;
     background-color: #ff0000; /* Nền đỏ */
@@ -55,7 +55,7 @@ header h1 {
     transition: background-color 0.3s;
 }
 
-#htv-btn:hover, #vtv-btn:hover, #thvl-btn:hover {
+#htv-btn:hover, #vtv-btn:hover, #thvl-btn:hover , #phim-btn:hover , #fm-btn:hover {
     background-color: #cc0000; /* Màu đỏ đậm hơn khi hover */
 }
 
