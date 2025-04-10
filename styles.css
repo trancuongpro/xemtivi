@@ -7,7 +7,7 @@
 body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
-    height: 100vh;
+    min-height: 100vh; /* Đảm bảo chiều cao tối thiểu bằng màn hình */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -26,13 +26,14 @@ body {
 }
 
 header {
-    padding: 15px;
+    padding: 10px; /* Giảm padding trên màn hình nhỏ */
     background-color: #007bff;
     color: #fff;
     text-align: center;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap; /* Cho phép các phần tử xuống dòng nếu không đủ chỗ */
 }
 
 header h1 {
@@ -41,26 +42,28 @@ header h1 {
 
 .button-group {
     display: flex;
-    gap: 40px; /* Khoảng cách giữa các button */
+    gap: 10px; /* Giảm khoảng cách giữa các nút trên màn hình nhỏ */
+    flex-wrap: wrap; /* Cho phép các nút xuống dòng khi không đủ chỗ */
+    justify-content: center; /* Căn giữa trên di động */
 }
 
-#htv-btn, #vtv-btn, #thvl-btn , #tiviplus-btn ,#phim-btn , #fm-btn {
-    padding: 8px 16px;
-    font-size: 20px;
-    background-color: #ff0000; /* Nền đỏ */
-    color: #fff; /* Chữ trắng */
+#htv-btn, #vtv-btn, #thvl-btn, #tiviplus-btn, #phim-btn, #fm-btn {
+    padding: 8px 12px; /* Giảm kích thước nút trên màn hình nhỏ */
+    font-size: 16px; /* Giảm cỡ chữ */
+    background-color: #ff0000;
+    color: #fff;
     border: none;
     border-radius: 4px;
     cursor: pointer;
     transition: background-color 0.3s;
 }
 
-#htv-btn:hover, #vtv-btn:hover, #thvl-btn:hover , #tiviplus-btn:hover ,#phim-btn:hover , #fm-btn:hover {
-    background-color: #cc0000; /* Màu đỏ đậm hơn khi hover */
+#htv-btn:hover, #vtv-btn:hover, #thvl-btn:hover, #tiviplus-btn:hover, #phim-btn:hover, #fm-btn:hover {
+    background-color: #cc0000;
 }
 
 #reload-btn {
-    padding: 8px 16px;
+    padding: 8px 12px;
     font-size: 14px;
     background-color: #fff;
     color: #007bff;
@@ -76,7 +79,7 @@ header h1 {
 
 .viewer {
     flex: 1;
-    padding: 10px;
+    padding: 5px; /* Giảm padding trên màn hình nhỏ */
     background-color: #000;
 }
 
@@ -95,35 +98,96 @@ footer {
 }
 
 .notification {
-    display: none; /* Ẩn mặc định */
+    display: none;
     position: fixed;
-    top: 20px; /* Cách đỉnh trang 20px */
-    left: 50%; /* Căn giữa ngang */
-    transform: translateX(-50%); /* Dịch chuyển để căn giữa chính xác */
-    background-color: #808080; /* Nền xám */
-    color: #fff; /* Chữ trắng */
-    font-size: 18px; /* Cỡ chữ 18px */
-    padding: 15px 20px; /* Khoảng cách bên trong */
-    border-radius: 10px; /* Bo góc tròn */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Đổ bóng nhẹ */
-    z-index: 1000; /* Đảm bảo nằm trên các phần tử khác */
-    max-width: 80%; /* Giới hạn chiều rộng */
-    text-align: center; /* Căn giữa chữ */
+    top: 10px; /* Giảm khoảng cách trên cùng */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #808080;
+    color: #fff;
+    font-size: 16px; /* Giảm cỡ chữ trên di động */
+    padding: 10px 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    max-width: 90%; /* Tăng chiều rộng tối đa trên di động */
+    text-align: center;
 }
 
 .ok-btn {
-    display: block; /* Đặt nút xuống dòng mới */
-    margin: 10px auto 0; /* Căn giữa nút, cách nội dung phía trên 10px */
-    padding: 8px 20px; /* Kích thước nút */
-    background-color: #fff; /* Nền trắng */
-    color: #333; /* Chữ xám đậm */
-    font-size: 16px; /* Cỡ chữ nút */
-    border: none; /* Không viền */
-    border-radius: 5px; /* Bo góc tròn nhỏ */
-    cursor: pointer; /* Con trỏ tay khi hover */
-    transition: background-color 0.3s; /* Hiệu ứng chuyển màu */
+    display: block;
+    margin: 10px auto 0;
+    padding: 6px 15px; /* Giảm kích thước nút */
+    background-color: #fff;
+    color: #333;
+    font-size: 14px; /* Giảm cỡ chữ */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
 }
 
 .ok-btn:hover {
-    background-color: #e0e0e0; /* Màu xám nhạt khi hover */
+    background-color: #e0e0e0;
+}
+
+/* Media Queries cho thiết bị di động */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 20px; /* Giảm kích thước tiêu đề */
+    }
+
+    .button-group {
+        gap: 8px; /* Giảm khoảng cách giữa các nút */
+        padding: 10px 0; /* Thêm padding để dễ nhìn */
+    }
+
+    #htv-btn, #vtv-btn, #thvl-btn, #tiviplus-btn, #phim-btn, #fm-btn {
+        font-size: 14px; /* Giảm cỡ chữ */
+        padding: 6px 10px; /* Giảm kích thước nút */
+    }
+
+    #reload-btn {
+        font-size: 12px; /* Giảm cỡ chữ */
+        padding: 6px 10px;
+    }
+
+    .container {
+        height: 100vh; /* Chiếm toàn bộ chiều cao màn hình trên di động */
+        border-radius: 0; /* Loại bỏ bo góc trên di động */
+    }
+
+    .notification {
+        font-size: 14px; /* Giảm cỡ chữ thông báo */
+        padding: 8px 12px; /* Giảm padding */
+    }
+
+    .ok-btn {
+        font-size: 12px; /* Giảm cỡ chữ nút OK */
+        padding: 5px 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 18px; /* Giảm thêm kích thước tiêu đề */
+    }
+
+    .button-group {
+        gap: 5px; /* Giảm khoảng cách giữa các nút */
+    }
+
+    #htv-btn, #vtv-btn, #thvl-btn, #tiviplus-btn, #phim-btn, #fm-btn {
+        font-size: 12px; /* Giảm cỡ chữ */
+        padding: 5px 8px; /* Giảm kích thước nút */
+    }
+
+    #reload-btn {
+        font-size: 10px; /* Giảm cỡ chữ */
+        padding: 5px 8px;
+    }
+
+    footer {
+        font-size: 10px; /* Giảm cỡ chữ chân trang */
+    }
 }
