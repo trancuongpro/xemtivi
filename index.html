@@ -7,6 +7,11 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <!-- Bảng thông báo -->
+    <div id="notification" class="notification">
+        Vì trang HTV chỉ cho load mỗi lần 7 phút nên cảm phiền quý vị sau mỗi 7 phút sẽ bấm Play lại một lần để xem nhé ... Trân trọng !...
+        <button id="ok-btn" class="ok-btn">OK</button>
+    </div>
     <div class="container">
         <header>
             <h1>Giải Trí Trực Tuyến</h1>
@@ -14,7 +19,7 @@
                 <button id="htv-btn">HTV</button>
                 <button id="vtv-btn">VTV</button>
                 <button id="thvl-btn">THVL</button>
-				<button id="tiviplus-btn">Tivi Plus</button>
+                <button id="tiviplus-btn">Tivi Plus</button>
                 <button id="phim-btn">Xem Phim</button>
                 <button id="fm-btn">Radio</button>
                 <button id="reload-btn">Tải lại</button>
@@ -45,7 +50,31 @@
         // Logic cho các nút bấm
         document.getElementById('htv-btn').addEventListener('click', () => {
             htvIframe.src = 'https://www.htv.com.vn/truc-tuyen';
-        });        
+        });
+
+        // Logic cho bảng thông báo
+        const notification = document.getElementById('notification');
+        const okBtn = document.getElementById('ok-btn');
+
+        function showNotification() {
+            notification.style.display = 'block'; // Hiển thị bảng
+        }
+
+        // Ẩn bảng khi nhấn OK
+        okBtn.addEventListener('click', () => {
+            notification.style.display = 'none';
+        });
+
+        // Hiển thị bảng khi load trang
+        window.addEventListener('load', () => {
+            showNotification();
+        });
+
+        // Hiển thị bảng khi reload
+        document.getElementById('reload-btn').addEventListener('click', () => {
+            refreshIframe();
+            showNotification();
+        });
     </script>
     <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'92df3295fdbb7b94',t:'MTc0NDI1NjE2Mi4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script>
 </body>
