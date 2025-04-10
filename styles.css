@@ -93,3 +93,37 @@ footer {
     color: #666;
     font-size: 12px;
 }
+
+.notification {
+    display: none; /* Ẩn mặc định */
+    position: fixed;
+    top: 20px; /* Cách đỉnh trang 20px */
+    left: 50%; /* Căn giữa ngang */
+    transform: translateX(-50%); /* Dịch chuyển để căn giữa chính xác */
+    background-color: #808080; /* Nền xám */
+    color: #fff; /* Chữ trắng */
+    font-size: 18px; /* Cỡ chữ 18px */
+    padding: 15px 20px; /* Khoảng cách bên trong */
+    border-radius: 10px; /* Bo góc tròn */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Đổ bóng nhẹ */
+    z-index: 1000; /* Đảm bảo nằm trên các phần tử khác */
+    max-width: 80%; /* Giới hạn chiều rộng */
+    text-align: center; /* Căn giữa chữ */
+}
+
+.ok-btn {
+    display: block; /* Đặt nút xuống dòng mới */
+    margin: 10px auto 0; /* Căn giữa nút, cách nội dung phía trên 10px */
+    padding: 8px 20px; /* Kích thước nút */
+    background-color: #fff; /* Nền trắng */
+    color: #333; /* Chữ xám đậm */
+    font-size: 16px; /* Cỡ chữ nút */
+    border: none; /* Không viền */
+    border-radius: 5px; /* Bo góc tròn nhỏ */
+    cursor: pointer; /* Con trỏ tay khi hover */
+    transition: background-color 0.3s; /* Hiệu ứng chuyển màu */
+}
+
+.ok-btn:hover {
+    background-color: #e0e0e0; /* Màu xám nhạt khi hover */
+}
