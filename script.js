@@ -6,6 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const thvlBtn = document.getElementById("thvl-btn");
 	const tiviplusBtn = document.getElementById("tiviplus-btn");
 	const phimBtn = document.getElementById("phim-btn");
+	const cayphimBtn = document.getElementById("cayphim-btn");
 	const fmBtn = document.getElementById("fm-btn");
 
     // Sự kiện khi nhấn nút "Tải lại"
@@ -40,6 +41,11 @@ document.addEventListener("DOMContentLoaded", () => {
 	// Sự kiện khi nhấn nút "Xem Phim"
     phimBtn.addEventListener("click", () => {
         window.location.href = "indexphim.html"; // Dẫn đến trang phim.html
+    });
+	
+	// Sự kiện khi nhấn nút "Xem Phim"
+    cayphimBtn.addEventListener("click", () => {
+        window.location.href = "indexcayphim.html"; // Dẫn đến trang cayphim.html
     });
 	
 	// Sự kiện khi nhấn nút "Radio"
