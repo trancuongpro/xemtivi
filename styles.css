@@ -47,7 +47,7 @@ header h1 {
     justify-content: center; /* Căn giữa trên di động */
 }
 
-#htv-btn, #vtv-btn, #thvl-btn, #tiviplus-btn, #phim-btn, #fm-btn {
+#htv-btn, #vtv-btn, #thvl-btn, #tiviplus-btn, #phim-btn, #cayphim-btn, #fm-btn {
     padding: 8px 12px; /* Giảm kích thước nút trên màn hình nhỏ */
     font-size: 16px; /* Giảm cỡ chữ */
     background-color: #ff0000;
@@ -58,7 +58,7 @@ header h1 {
     transition: background-color 0.3s;
 }
 
-#htv-btn:hover, #vtv-btn:hover, #thvl-btn:hover, #tiviplus-btn:hover, #phim-btn:hover, #fm-btn:hover {
+#htv-btn:hover, #vtv-btn:hover, #thvl-btn:hover, #tiviplus-btn:hover, #phim-btn:hover, #cayphim-btn:hover, #fm-btn:hover {
     background-color: #cc0000;
 }
 
@@ -142,7 +142,7 @@ footer {
         padding: 10px 0; /* Thêm padding để dễ nhìn */
     }
 
-    #htv-btn, #vtv-btn, #thvl-btn, #tiviplus-btn, #phim-btn, #fm-btn {
+    #htv-btn, #vtv-btn, #thvl-btn, #tiviplus-btn, #phim-btn, #cayphim-btn, #fm-btn {
         font-size: 14px; /* Giảm cỡ chữ */
         padding: 6px 10px; /* Giảm kích thước nút */
     }
@@ -177,7 +177,7 @@ footer {
         gap: 5px; /* Giảm khoảng cách giữa các nút */
     }
 
-    #htv-btn, #vtv-btn, #thvl-btn, #tiviplus-btn, #phim-btn, #fm-btn {
+    #htv-btn, #vtv-btn, #thvl-btn, #tiviplus-btn, #phim-btn, #cayphim-btn, #fm-btn {
         font-size: 12px; /* Giảm cỡ chữ */
         padding: 5px 8px; /* Giảm kích thước nút */
     }
