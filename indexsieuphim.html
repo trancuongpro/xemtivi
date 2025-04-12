@@ -7,6 +7,11 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+<!-- Bảng thông báo -->
+    <div id="notification" class="notification">
+        Vì trang Xem Phim phải mở Tab mới để tránh xung đột nên khi chuyển qua xem xong bạn trở lại xem tiếp nhé . Nếu bạn dùng trình chặn quãng cáo sẽ gây lổi không phát được Media . Hãy tắt trình chặn quãng cáo để xem phim bình thường ... Trân trọng !...
+        <button id="ok-btn" class="ok-btn">OK</button>
+    </div>
     <div class="container">
         <header>
             <h1>Giải Trí Trực Tuyến</h1>
@@ -30,5 +35,38 @@
         </footer>
     </div>
     <script src="script.js"></script>
+	<script>
+	 // Logic cho iframe HTV
+        const htvIframe = document.getElementById('htv-frame');
+		
+		 // Hàm refresh iframe
+        function refreshIframe() {
+            htvIframe.src = htvIframe.src; // Reload iframe
+        }
+		
+	// Logic cho bảng thông báo
+        const notification = document.getElementById('notification');
+        const okBtn = document.getElementById('ok-btn');
+
+        function showNotification() {
+            notification.style.display = 'block'; // Hiển thị bảng
+        }
+
+        // Ẩn bảng khi nhấn OK
+        okBtn.addEventListener('click', () => {
+            notification.style.display = 'none';
+        });
+
+        // Hiển thị bảng khi load trang
+        window.addEventListener('load', () => {
+            showNotification();
+        });
+
+        // Hiển thị bảng khi reload
+        document.getElementById('reload-btn').addEventListener('click', () => {
+            refreshIframe();
+            showNotification();
+        });
+    </script>
 </body>
 </html>
