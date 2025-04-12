@@ -9,6 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
 	const cayphimBtn = document.getElementById("cayphim-btn");
 	const sieuphimBtn = document.getElementById("sieuphim-btn");
 	const fmBtn = document.getElementById("fm-btn");
+	const cailuongBtn = document.getElementById("cailuong-btn");
 
     // Sự kiện khi nhấn nút "Tải lại"
     reloadBtn.addEventListener("click", () => {
@@ -57,6 +58,11 @@ document.addEventListener("DOMContentLoaded", () => {
 	// Sự kiện khi nhấn nút "Radio"
     fmBtn.addEventListener("click", () => {
         window.location.href = "indexfm.html"; // Dẫn đến trang radio.html
+    });
+	
+	// Sự kiện khi nhấn nút "Radio"
+    cailuongBtn.addEventListener("click", () => {
+        window.location.href = "indexcl.html"; // Dẫn đến trang cailuong.html
     });
 
     // Kiểm tra khi iframe tải xong
