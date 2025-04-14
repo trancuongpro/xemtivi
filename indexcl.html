@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Giải Trí Trực Tuyến</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Giải Trí Trực Tuyến - Cải Lương</title>
+    <link rel="stylesheet" href="stylescl.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
     <div class="container">
@@ -14,22 +15,44 @@
                 <button id="htv-btn">HTV</button>
                 <button id="vtv-btn">VTV</button>
                 <button id="thvl-btn">THVL</button>
-				<button id="tiviplus-btn">Tivi Plus</button>
-				<button id="phim-btn">Xem Phim</button>
-				<button id="cayphim-btn">Luyện Phim</button>
-				<button id="sieuphim-btn">Siêu Phim</button>
-				<button id="fm-btn">Radio</button>
-				<button id="cailuong-btn">Cải Lương</button>
+                <button id="tiviplus-btn">Tivi Plus</button>
+                <button id="phim-btn">Xem Phim</button>
+                <button id="cayphim-btn">Luyện Phim</button>
+                <button id="sieuphim-btn">Siêu Phim</button>
+                <button id="fm-btn">Radio</button>
+                <button id="cailuong-btn">Cải Lương</button>
                 <button id="reload-btn">Tải Lại</button>
             </div>
         </header>
-        <div class="viewer">
-            <iframe id="htv-frame" src="https://nhaccotruyen.net/" allowfullscreen></iframe>
+        <div class="content">
+            <div class="player-section">
+                <div class="youtube-container">
+                    <iframe id="youtube-frame" src="" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                </div>
+                <div class="controls">
+                    <span id="current-video-title" class="current-video-title"></span>
+                    <button id="play-pause-btn" class="play-pause-btn"><i class="fas fa-play"></i></button>
+                    <button id="stop-btn" class="stop-btn"><i class="fas fa-stop"></i></button>
+                </div>
+            </div>
+            <div class="video-lists-container">
+                <div class="video-list-section">
+                    <h2>Tuồng Cổ</h2>
+                    <div id="video-list-tuongco"></div>
+                </div>
+                <div class="video-list-section">
+                    <h2>Tân Cổ Giao Duyên</h2>
+                    <div id="video-list-tancogiaouyen"></div>
+                </div>
+            </div>
         </div>
         <footer>
             <p>Thiết Kế : Trần Cường ... 2025</p>
         </footer>
     </div>
-    <script src="script.js"></script>
+    <script src="list.js"></script>
+    <script src="list2.js"></script>
+    <script src="danhsach.js"></script>
+    <script src="script.js"></script>    
 </body>
 </html>

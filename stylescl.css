@@ -1,0 +1,397 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    height: 100vh;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-shrink: 0;
+}
+
+header h1 {
+    font-size: 24px;
+}
+
+.button-group {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#htv-btn, #vtv-btn, #thvl-btn, #tiviplus-btn, #phim-btn, #cayphim-btn, #sieuphim-btn, #fm-btn, #cailuong-btn {
+    padding: 8px 12px;
+    font-size: 16px;
+    background-color: #ff0000;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#htv-btn:hover, #vtv-btn:hover, #thvl-btn:hover, #tiviplus-btn:hover, #phim-btn:hover, #cayphim-btn:hover, #sieuphim-btn:hover, #fm-btn:hover, #cailuong-btn:hover {
+    background-color: #cc0000;
+}
+
+#reload-btn {
+    padding: 8px 12px;
+    font-size: 14px;
+    background-color: #fff;
+    color: #007bff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#reload-btn:hover {
+    background-color: #e0e0e0;
+}
+
+.content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    overflow: hidden;
+}
+
+.player-section {
+    flex-shrink: 0;
+    background-color: #f9f9f9;
+    padding: 10px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.youtube-container {
+    width: 100%;
+    height: 50px;
+    overflow: hidden;
+    position: relative;
+}
+
+#youtube-frame {
+    width: 100%;
+    height: 150px;
+    position: absolute;
+    bottom: 0;
+    border: none;
+}
+
+.controls {
+    display: flex;
+    align-items: center;
+    padding: 10px 0;
+    flex-wrap: nowrap;
+}
+
+.current-video-title {
+    font-size: 16px;
+    color: #333;
+    flex-grow: 1;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.play-pause-btn, .stop-btn {
+    padding: 5px 12px;
+    font-size: 14px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-left: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 40px;
+}
+
+.play-pause-btn {
+    margin-left: 100px;
+}
+
+.play-pause-btn i, .stop-btn i {
+    font-size: 16px;
+    line-height: 1;
+}
+
+.video-lists-container {
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+}
+
+.video-list-section {
+    flex: 1;
+    padding: 10px;
+    overflow-y: auto;
+    background-color: #f9f9f9;
+    border-right: 1px solid #e0e0e0;
+}
+
+.video-list-section:last-child {
+    border-right: none;
+}
+
+.video-list-section h2 {
+    font-size: 18px;
+    color: #333;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+#video-list-tuongco, #video-list-tancogiaouyen {
+    height: 100%;
+    overflow-y: auto;
+}
+
+.video-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    border-bottom: 1px solid #e0e0e0;
+    transition: background-color 0.3s;
+    cursor: pointer;
+}
+
+.video-item:hover {
+    background-color: #f0f0f0;
+}
+
+.video-title {
+    font-size: 16px;
+    color: #333;
+    text-align: center;
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+footer {
+    padding: 10px;
+    text-align: center;
+    background-color: #f8f9fa;
+    color: #666;
+    font-size: 12px;
+    flex-shrink: 0;
+}
+
+/* Tối ưu cho di động (<= 768px) */
+@media (max-width: 768px) {
+    .container {
+        height: 100vh;
+        border-radius: 0;
+    }
+
+    header {
+        padding: 8px;
+    }
+
+    header h1 {
+        font-size: 20px;
+    }
+
+    .button-group {
+        gap: 8px;
+        padding: 10px 0;
+    }
+
+    #htv-btn, #vtv-btn, #thvl-btn, #tiviplus-btn, #phim-btn, #cayphim-btn, #sieuphim-btn, #fm-btn, #cailuong-btn {
+        padding: 6px 10px;
+        font-size: 14px;
+    }
+
+    #reload-btn {
+        padding: 6px 10px;
+        font-size: 12px;
+    }
+
+    .player-section {
+        padding: 8px;
+    }
+
+    .youtube-container {
+        height: 45px;
+    }
+
+    #youtube-frame {
+        height: 100px;
+    }
+
+    .controls {
+        padding: 8px 0;
+        gap: 8px;
+    }
+
+    .current-video-title {
+        font-size: 14px;
+        max-width: 100%;
+    }
+
+    .play-pause-btn {
+        margin-left: 10px;
+        order: 2;
+    }
+
+    .stop-btn {
+        order: 3;
+    }
+
+    .play-pause-btn, .stop-btn {
+        padding: 4px 10px;
+        min-width: 36px;
+    }
+
+    .play-pause-btn i, .stop-btn i {
+        font-size: 14px;
+    }
+
+    .video-lists-container {
+        flex-direction: column;
+    }
+
+    .video-list-section {
+        border-right: none;
+        border-bottom: 1px solid #e0e0e0;
+    }
+
+    .video-list-section:last-child {
+        border-bottom: none;
+    }
+
+    #video-list-tuongco, #video-list-tancogiaouyen {
+        padding: 8px;
+    }
+
+    .video-item {
+        padding: 8px;
+    }
+
+    .video-title {
+        font-size: 14px;
+    }
+
+    footer {
+        padding: 8px;
+        font-size: 10px;
+    }
+}
+
+/* Tối ưu cho di động nhỏ (<= 480px) */
+@media (max-width: 480px) {
+    header {
+        flex-direction: column;
+        align-items: center;
+        padding: 6px;
+    }
+
+    header h1 {
+        font-size: 18px;
+        margin-bottom: 6px;
+    }
+
+    .button-group {
+        gap: 5px;
+        padding: 6px 0;
+    }
+
+    #htv-btn, #vtv-btn, #thvl-btn, #tiviplus-btn, #phim-btn, #cayphim-btn, #sieuphim-btn, #fm-btn, #cailuong-btn {
+        padding: 5px 8px;
+        font-size: 12px;
+    }
+
+    #reload-btn {
+        padding: 5px 8px;
+        font-size: 10px;
+    }
+
+    .player-section {
+        padding: 6px;
+    }
+
+    .youtube-container {
+        height: 40px;
+    }
+
+    #youtube-frame {
+        height: 80px;
+    }
+
+    .controls {
+        padding: 6px 0;
+        flex-wrap: nowrap;
+    }
+
+    .current-video-title {
+        font-size: 12px;
+        max-width: calc(100% - 80px);
+    }
+
+    .play-pause-btn {
+        margin-left: 8px;
+    }
+
+    .play-pause-btn, .stop-btn {
+        padding: 3px 8px;
+        min-width: 32px;
+    }
+
+    .play-pause-btn i, .stop-btn i {
+        font-size: 12px;
+    }
+
+    .video-list-section h2 {
+        font-size: 16px;
+    }
+
+    .video-item {
+        padding: 6px;
+    }
+
+    .video-title {
+        font-size: 12px;
+    }
+
+    footer {
+        padding: 6px;
+        font-size: 10px;
+    }
+}
+
