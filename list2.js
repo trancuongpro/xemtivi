@@ -2,6 +2,11 @@
 const videoListTancogiaouyen = [
   { "url": "https://www.youtube.com/watch?v=oiSxnrxZCaw", "title": "Tân Cổ Giao Duyên , Ca Vọng Cổ Miền Tây 2023 - Nghe Cứ Phải là Siêu Hay" },
   { "url": "https://www.youtube.com/watch?v=H1Oy5cHhofI", "title": "Tuyển Tập Tân Cổ Giao Duyên , Ca Vọng Miền Tây 2023 - Nghe Mà Xót Xa Trong Lòng" },
+  { "url": "https://www.youtube.com/watch?v=6BP2BjQHEvo", "title": "Album Tân Ca Cổ Song Ca Đặc Biệt Thanh Nhường ✔ Tuyệt Phẩm Tân Cổ Song Ca Hay Nhất 2023" },
+  { "url": "https://www.youtube.com/watch?v=WX569_HxX4o", "title": "Toát Mồ Hôi  Cặp Bài Trùng Bùi Trung Đẳng, Lương Hồng Huệ Ca Cổ Hơi Dài 1000 Chữ - CA CỔ HIỆN ĐẠI" },
+  { "url": "https://www.youtube.com/watch?v=bdv_gl_NLfg", "title": "Buồn Xé Ruột CA CỔ HƠI DÀI 2025 - Khóc Thành Dòng Ca Vọng Cổ Hơi Dài 1000 Chữ Về Cha Mẹ💔Ca Cổ Hay" },
+  { "url": "https://www.youtube.com/watch?v=WwNkrWcpaAc", "title": "Ca Cổ Cải Lương Hơi Dài Số Nghèo Trèo Cao🔥Hồ Minh Đương, Mai Phương Thảo Ca Cổ Hơi Dài😥CA CỔ HAY" },
+  
   { "url": "https://www.youtube.com/watch?v=N1FYAumR_aQ", "title": "BẾN SÔNG CHỜ - Tân Cổ Giao Duyên Nghe Hoài Không Chán" },
   { "url": "https://www.youtube.com/watch?v=G-fDw6weyKs", "title": "Vọng Cổ Miền Tây🌸 ĐÓN XUÂN QUÝ MÃO 🌸Tân Cổ Giao Duyên Hơi Dài Đặc Sắc Nhất 2023 Hay Nhức Nhói 🚩" },
   { "url": "https://www.youtube.com/watch?v=pcK9W6IE_iA", "title": "Tân Cổ Chào Xuân 2023🌸KHỔ VÌ YÊU NÀNG🌸Ca Cổ Giao Duyên Đón Xuân QUÝ MÃO Mới Nhất Nghe Đi Rồi Ghiền 🚩" },

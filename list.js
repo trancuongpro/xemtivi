@@ -2,6 +2,8 @@
 const videoList = [
   // Từ danhsach.js gốc (50 video)
   { "url": "https://www.youtube.com/watch?v=nz0kiq8q1dM&t=2634s", "title": "Cải lương LAN VÀ ĐIỆP 💔 Chí Tâm, Thanh Kim Huệ, Mai Lan, Hùng Minh, Tú Trinh, Kim Thủy, Hoàng Mai" },
+    { "url": "https://www.youtube.com/watch?v=IXxJtprjaDU&t=2356s", "title": "Bao Công Xử Án Quách Hòe" },
+   
    // Từ danh sách 29 video
   { "url": "https://www.youtube.com/watch?v=kmRaKTx3kdk", "title": "Cải Lương: Mùa Thu Trên Bạch Mã Sơn | Nghệ Sỹ: Minh Cảnh & Mỹ Châu | Soạn giả: Yên Lang" },
   { "url": "https://www.youtube.com/watch?v=kKYHe5j79Yo", "title": "Cải Lương: Đêm Kinh Hoàng | Nghệ Sỹ: Thành Được & Tấn Tài, Hà Bửu Tân | Soạn giả: Thu An" },
