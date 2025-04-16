@@ -8,6 +8,11 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
+<!-- Bảng thông báo -->
+    <div id="notification" class="notification">
+        Trong Khung Video Phát Có Mục Danh Sách Là Dấu 3 Gạch Nhấn Vào Sẽ Ra Rất Nhiều Bài Để Lựa Chọn Để Xem Và Nghe ... Trân trọng !...
+        <button id="ok-btn" class="ok-btn">OK</button>
+    </div>
     <div class="container">
         <header>
             <h1>Giải Trí Trực Tuyến</h1>
@@ -23,11 +28,11 @@
                 <button id="cailuong-btn">Cải Lương</button>
                 <button id="reload-btn">Tải Lại</button>
             </div>
-        </header>
+        </header>		
         <div class="content">
             <div class="video-lists-container">
                 <div class="playlist-wrapper">
-                    <div class="video-list-section">
+                    <div class="video-list-section">					
                         <h2>Tuồng Cổ</h2>
                         <div id="video-list-tuongco">
                             <iframe id="tuongco-iframe" width="100%" height="315" src="https://www.youtube.com/embed/videoseries?si=5Fr8AeOitwBaYJNN&list=PLOcT2MYIWAHVJEVdVryjxpyoyqnWaSVrO&autoplay=1" title="YouTube Playlist Tuồng Cổ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
@@ -46,12 +51,12 @@
 														<div id="tancogiaouyen-video-list" class="video-list"></div>
                             <h3>Tuồng Cổ - Phần 3</h3>
                             <iframe id="tancogiaouyen-new-iframe" width="100%" height="315" src="https://www.youtube.com/embed/videoseries?si=KW8ZbLH-Ur6ewiXH&list=PLsWG_D-jpwqyW-Mz7LnmjUfjVf4YJ6_d-" title="YouTube Playlist Tân Cổ Giao Duyên Mới" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                                                        <div id="tancogiaouyen-new-video-list" class="video-list"></div>
-                        </div>
+                                                        <div id="tancogiaouyen-new-video-list" class="video-list"></div>														
+							</div>
                     </div>
                 </div>
             </div>
-        </div>
+        </div>		
         <div id="video-popup" class="video-popup">
             <div class="video-popup-content">
                 <button id="close-popup" class="close-popup"><i class="fas fa-times"></i></button>
@@ -63,6 +68,39 @@
         </footer>
     </div>
     <script defer src="script.js"></script>
+	<script>
+	// Logic cho iframe HTV
+        const htvIframe = document.getElementById('htv-frame');
+		
+	// Logic cho bảng thông báo
+        const notification = document.getElementById('notification');
+        const okBtn = document.getElementById('ok-btn');
+
+        function showNotification() {
+            notification.style.display = 'block'; // Hiển thị bảng
+        }
+
+        // Ẩn bảng khi nhấn OK
+        okBtn.addEventListener('click', () => {
+            notification.style.display = 'none';
+        });
+
+        // Hiển thị bảng khi load trang
+        window.addEventListener('load', () => {
+            showNotification();
+        });
+
+        // Hiển thị bảng khi reload
+        document.getElementById('reload-btn').addEventListener('click', () => {
+            refreshIframe();
+            showNotification();
+        });
+		
+		// Hiển thị bảng và refresh trang khi nhấn Tải Lại
+document.getElementById('reload-btn').addEventListener('click', () => {
+    location.reload(); // Refresh toàn bộ trang
+});
+    </script>
 <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'931248bf3e9ebd48',t:'MTc0NDc5MTg0My4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script>
 </body>
 </html>
