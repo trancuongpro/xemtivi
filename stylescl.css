@@ -87,85 +87,28 @@ header h1 {
     overflow: hidden;
 }
 
-.player-section {
-    flex-shrink: 0;
-    background-color: #f9f9f9;
-    padding: 10px;
-    border-bottom: 1px solid #e0e0e0;
-}
-
-.youtube-container {
-    width: 100%;
-    height: 50px;
-    overflow: hidden;
-    position: relative;
-}
-
-#youtube-frame {
-    width: 100%;
-    height: 150px;
-    position: absolute;
-    bottom: 0;
-    border: none;
-}
-
-.controls {
-    display: flex;
-    align-items: center;
-    padding: 10px 0;
-    flex-wrap: nowrap;
-}
-
-.current-video-title {
-    font-size: 16px;
-    color: #333;
-    flex-grow: 1;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
-
-.play-pause-btn, .stop-btn {
-    padding: 5px 12px;
-    font-size: 14px;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    margin-left: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-width: 40px;
-}
-
-.play-pause-btn {
-    margin-left: 100px;
-}
-
-.play-pause-btn i, .stop-btn i {
-    font-size: 16px;
-    line-height: 1;
-}
-
 .video-lists-container {
     flex: 1;
     display: flex;
+    flex-direction: column;
+    padding: 10px;
+    background-color: #f9f9f9;
+    overflow-y: auto;
+}
+
+.playlist-wrapper {
+    display: flex;
     flex-direction: row;
-    overflow: hidden;
+    gap: 10px;
+    justify-content: center;
 }
 
 .video-list-section {
     flex: 1;
     padding: 10px;
-    overflow-y: auto;
-    background-color: #f9f9f9;
-    border-right: 1px solid #e0e0e0;
-}
-
-.video-list-section:last-child {
-    border-right: none;
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
 }
 
 .video-list-section h2 {
@@ -177,17 +120,39 @@ header h1 {
 
 #video-list-tuongco, #video-list-tancogiaouyen {
     height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#video-list-tuongco iframe, #video-list-tancogiaouyen iframe {
+    width: 100%;
+    max-width: 560px;
+    height: 315px;
+    margin: 0 auto;
+    display: block;
+}
+
+.note {
+    font-size: 12px;
+    color: #666;
+    text-align: center;
+    margin-top: 5px;
+}
+
+.video-list {
+    width: 100%;
+    max-width: 560px;
+    max-height: 200px;
     overflow-y: auto;
+    margin-top: 10px;
 }
 
 .video-item {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 10px;
+    padding: 8px;
     border-bottom: 1px solid #e0e0e0;
-    transition: background-color 0.3s;
     cursor: pointer;
+    transition: background-color 0.3s;
 }
 
 .video-item:hover {
@@ -195,13 +160,53 @@ header h1 {
 }
 
 .video-title {
-    font-size: 16px;
+    font-size: 14px;
     color: #333;
-    text-align: center;
+}
+
+.video-popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.video-popup-content {
+    position: relative;
+    max-width: 800px;
+    width: 90%;
+}
+
+.close-popup {
+    position: absolute;
+    top: -30px;
+    right: -10px;
+    background-color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.close-popup i {
+    font-size: 18px;
+    color: #333;
+}
+
+#popup-iframe {
+    width: 100%;
+    height: 450px;
 }
 
 footer {
@@ -243,52 +248,14 @@ footer {
         font-size: 12px;
     }
 
-    .player-section {
-        padding: 8px;
-    }
-
-    .youtube-container {
-        height: 45px;
-    }
-
-    #youtube-frame {
-        height: 100px;
-    }
-
-    .controls {
-        padding: 8px 0;
+    .playlist-wrapper {
+        flex-direction: column;
         gap: 8px;
     }
 
-    .current-video-title {
-        font-size: 14px;
-        max-width: 100%;
-    }
-
-    .play-pause-btn {
-        margin-left: 10px;
-        order: 2;
-    }
-
-    .stop-btn {
-        order: 3;
-    }
-
-    .play-pause-btn, .stop-btn {
-        padding: 4px 10px;
-        min-width: 36px;
-    }
-
-    .play-pause-btn i, .stop-btn i {
-        font-size: 14px;
-    }
-
-    .video-lists-container {
-        flex-direction: column;
-    }
-
     .video-list-section {
-        border-right: none;
+        padding: 8px;
+        border: none;
         border-bottom: 1px solid #e0e0e0;
     }
 
@@ -296,16 +263,28 @@ footer {
         border-bottom: none;
     }
 
-    #video-list-tuongco, #video-list-tancogiaouyen {
-        padding: 8px;
+    #video-list-tuongco iframe, #video-list-tancogiaouyen iframe {
+        height: 200px;
+    }
+
+    .note {
+        font-size: 10px;
+    }
+
+    .video-list {
+        max-height: 150px;
     }
 
     .video-item {
-        padding: 8px;
+        padding: 6px;
     }
 
     .video-title {
-        font-size: 14px;
+        font-size: 12px;
+    }
+
+    #popup-iframe {
+        height: 200px;
     }
 
     footer {
@@ -342,51 +321,20 @@ footer {
         font-size: 10px;
     }
 
-    .player-section {
-        padding: 6px;
-    }
-
-    .youtube-container {
-        height: 40px;
-    }
-
-    #youtube-frame {
-        height: 80px;
-    }
-
-    .controls {
-        padding: 6px 0;
-        flex-wrap: nowrap;
-    }
-
-    .current-video-title {
-        font-size: 12px;
-        max-width: calc(100% - 80px);
-    }
-
-    .play-pause-btn {
-        margin-left: 8px;
-    }
-
-    .play-pause-btn, .stop-btn {
-        padding: 3px 8px;
-        min-width: 32px;
-    }
-
-    .play-pause-btn i, .stop-btn i {
-        font-size: 12px;
-    }
-
     .video-list-section h2 {
         font-size: 16px;
     }
 
-    .video-item {
-        padding: 6px;
+    #video-list-tuongco iframe, #video-list-tancogiaouyen iframe {
+        height: 180px;
     }
 
-    .video-title {
-        font-size: 12px;
+    .video-list {
+        max-height: 100px;
+    }
+
+    #popup-iframe {
+        height: 180px;
     }
 
     footer {
@@ -394,4 +342,3 @@ footer {
         font-size: 10px;
     }
 }
-
