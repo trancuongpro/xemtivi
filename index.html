@@ -21,10 +21,10 @@
                 <button id="thvl-btn">THVL</button>
                 <button id="tiviplus-btn">Tivi Plus</button>
                 <button id="phim-btn">Xem Phim</button>
-				<button id="cayphim-btn">Luyện Phim</button>
-				<button id="sieuphim-btn">Siêu Phim</button>
+                <button id="cayphim-btn">Luyện Phim</button>
+                <button id="sieuphim-btn">Siêu Phim</button>
                 <button id="fm-btn">Radio</button>
-				<button id="cailuong-btn">Cải Lương</button>
+                <button id="cailuong-btn">Cải Lương</button>
                 <button id="reload-btn">Tải Lại</button>
             </div>
         </header>
@@ -32,7 +32,7 @@
             <iframe id="htv-frame" src="https://www.htv.com.vn/truc-tuyen" allowfullscreen></iframe>
         </div>
         <footer>
-            <p>Thiết Kế : Trần Cường ... 2025</p>
+            <p>Thiết Kế: Trần Cường ... 2025 | Giờ Việt Nam: <span id="vietnam-time"></span> | <span id="vietnam-date"></span></p>
         </footer>
     </div>
     <script src="script.js"></script>
@@ -78,7 +78,37 @@
             refreshIframe();
             showNotification();
         });
+
+        // Hiển thị thời gian và ngày dương lịch theo múi giờ Việt Nam
+        function updateVietnamTime() {
+            const date = new Date();
+            const optionsTime = {
+                timeZone: 'Asia/Ho_Chi_Minh',
+                hour12: false,
+                hour: '2-digit',
+                minute: '2-digit',
+                second: '2-digit'
+            };
+            const optionsDate = {
+                timeZone: 'Asia/Ho_Chi_Minh',
+                weekday: 'long',
+                day: '2-digit',
+                month: '2-digit',
+                year: 'numeric'
+            };
+            const time = date.toLocaleTimeString('vi-VN', optionsTime);
+            const dateParts = date.toLocaleDateString('vi-VN', optionsDate).split(', ');
+            const weekday = dateParts[0]; // Lấy thứ, ví dụ: "Thứ Tư"
+            const dateStr = dateParts[1].split('/').join('/'); // Lấy ngày/tháng/năm, ví dụ: "17/04/2025"
+            document.getElementById('vietnam-time').textContent = time;
+            document.getElementById('vietnam-date').textContent = `${weekday} ${dateStr}`;
+        }
+
+        // Cập nhật thời gian mỗi giây
+        updateVietnamTime();
+        setInterval(updateVietnamTime, 1000);
     </script>
     <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'92df3295fdbb7b94',t:'MTc0NDI1NjE2Mi4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'931a104f595dafaa',t:'MTc0NDg3MzQxOC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script>
 </body>
 </html>
